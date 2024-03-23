@@ -6,6 +6,18 @@
     <title>動画公開ページ</title>
   </head>
   <body>
-    <h1>Hello</h1>
+    <header></header>
+    <main>
+      {% if videos %}
+        {% for video in videos %}
+          <div>
+            <video src="{{ video.file_path }}" controls></video>
+            <p>{{ video.title }}</p>
+            <p>{{ video.description }}</p>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </main>
+    <footer></footer>
   </body>
 </html>
